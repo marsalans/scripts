@@ -1,4 +1,5 @@
 #!/bin/bash
+# requires 'lftp' client installed
 
 HOST='ftp.server.com'
 USER='anonymous'
