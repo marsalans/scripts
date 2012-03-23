@@ -12,6 +12,8 @@ open $HOST
 user $USER $PASS 
 lcd $SOURCEFOLDER 
 mirror --delete --verbose $SOURCEFOLDER $TARGETFOLDER 
-bye
-"
+bye";
+md5sum -c $TARGETFOLDER/*.md5sum
+
+
 
