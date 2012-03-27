@@ -13,9 +13,10 @@ HOWOLD="60"
 EMAIL="changeme@changeme.tld"
 
 ###################################################################
-## command variables
+## util variables
 D=`date +'%d-%m-%Y'`
 WWWDIR="/var/www"
+SM="/usr/sbin/sendmail"
 MYSQLDUMP="/usr/bin/mysqldump"
 MYSQL="/usr/bin/mysql"
 
@@ -43,6 +44,6 @@ echo "From: backup@" $HOSTNAME > /tmp/backup.mail
 echo "To: " $EMAIL >> /tmp/backup.mail
 echo "Subject: ["$D"] Your weekly backup is ready." >> /tmp/backup.mail
 echo "Your backup files are located in " $BACKUPDIR >> /tmp/backup.mail
-sendmail -t root < /tmp/backup.mail
+$SM -t root < /tmp/backup.mail
 rm /tmp/backup.mail
 
