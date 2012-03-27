@@ -30,7 +30,7 @@ DATABASES=`$MYSQL --user=root --password=$MYSQLPASS -e "SHOW DATABASES;" | tr -d
 # dump each database in turn
 for DB in $DATABASES; do
     echo $DB
-    $MYSQLDUMP --force --opt --user=root --password=$MYSQLPASS --databases $DB > /tmp/backup-$D/$DB.sql"
+    $MYSQLDUMP --force --opt --user=root --password=$MYSQLPASS --databases $DB > /tmp/backup-$D/$DB.sql
 done
 tar -czf $BACKUPDIR/backup-$D.tar.gz /tmp/backup-$D
 rm -rf /tmp/backup-$D
