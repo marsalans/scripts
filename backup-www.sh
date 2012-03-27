@@ -23,6 +23,7 @@ MYSQL="/usr/bin/mysql"
 ## gzip www-data files & mysql db
 chown -R www-data:www-data $WWWDIR
 mkdir /tmp/backup-$D
+ls -l $WWWDIR > /tmp/backup-$D/www-data.includes
 tar -cf /tmp/backup-$D/www-data.tar $WWWDIR
 
 # get a list of databases
