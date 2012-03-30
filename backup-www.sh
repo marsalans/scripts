@@ -16,6 +16,7 @@ EMAIL="changeme@changeme.tld"
 ## util variables
 D=`date +'%d-%m-%Y'`
 WWWDIR="/var/www"
+MD5IT="/usr/bin/md5sum"
 SM="/usr/sbin/sendmail"
 MYSQLDUMP="/usr/bin/mysqldump"
 MYSQL="/usr/bin/mysql"
@@ -36,6 +37,9 @@ for DB in $DATABASES; do
 done
 tar -czf $BACKUPDIR/backup-$D.tar.gz /tmp/backup-$D
 rm -rf /tmp/backup-$D
+
+## create md5 checksum files
+$MD5IT $BACKUPDIR/backup-$D.tar.gz > $BACKUPDIR/backup-$D.md5sum
 
 ## delete backup files older than $HOWOLD days
 find $BACKUPDIR/* -mtime +$HOWOLD -exec rm {} \;
