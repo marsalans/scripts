@@ -43,7 +43,7 @@ find $BACKUPDIR/* -mtime +$HOWOLD -exec rm {} \;
 ## mail the site owner
 echo "From: backup@" $HOSTNAME > /tmp/backup.mail
 echo "To: " $EMAIL >> /tmp/backup.mail
-echo "Subject: ["$D"] Your weekly backup is ready." >> /tmp/backup.mail
+echo "Subject: ["$D"] Your backup is ready." >> /tmp/backup.mail
 echo "Your backup files are located in " $BACKUPDIR >> /tmp/backup.mail
 $SM -t root < /tmp/backup.mail
 rm /tmp/backup.mail
