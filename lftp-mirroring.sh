@@ -13,7 +13,7 @@ user $USER $PASS
 lcd $SOURCEFOLDER 
 mirror --delete --verbose $SOURCEFOLDER $TARGETFOLDER 
 bye";
-md5sum -c $TARGETFOLDER/*.md5sum
+md5sum -c $TARGETFOLDER/*.md5sum > /root/checksums-$HOST
 
 
 
