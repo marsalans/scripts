@@ -1,0 +1,7 @@
+## Linux related stuff for Debian & Gentoo distributions
+
+### lftp-mirroring.sh
+Mirroring script using lftp client
+
+### backup-www.sh:
+Backup script with mail notification via sendmail
