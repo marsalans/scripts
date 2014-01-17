@@ -25,4 +25,4 @@ except ValueError:
     print "Wrong arguments. Please enter only IPv4/6 addresses and CIDR."
 
 except KeyboardInterrupt:
-    print "Scan terminated by user."
+    print "\nScan terminated by user."
